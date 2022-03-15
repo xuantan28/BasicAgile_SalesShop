@@ -2,7 +2,7 @@
 	/* update VIEW */
 	function updateView(productID){
 		$.ajax({
-			url: 'http://localhost/BasicShop_Angile/Ajax/updateView',
+			url: 'http://localhost/BasicAgile_SalesShop/Ajax/updateView',
 			method: 'post',
 			data: {
 				productID: productID
@@ -21,7 +21,7 @@
 		}
 		else{
 			$.ajax({
-				url: 'http://localhost/BasicShop_Angile/Ajax/submitFeedback',
+				url: 'http://localhost/BasicAgile_SalesShop/Ajax/submitFeedback',
 				method: 'post',
 				data: {
 					feedbackID: feedbackID,
@@ -39,7 +39,7 @@
 	/* load feedback function */
 	function loadFeedback(feedbackID){
 		$.ajax({
-			url: 'http://localhost/BasicShop_Angile/Ajax/loadFeedback',
+			url: 'http://localhost/BasicAgile_SalesShop/Ajax/loadFeedback',
 			method: 'post',
 			data: {
 				feedbackID: feedbackID
@@ -60,7 +60,7 @@
 			var title = $('.contact-form input[name="contact-title"]').val();
 			var content = $('.contact-form #contact-area').val();
 			$.ajax({
-				url: 'http://localhost/BasicShop_Angile/Ajax/sendFeedback',
+				url: 'http://localhost/BasicAgile_SalesShop/Ajax/sendFeedback',
 				method: 'post',
 				dataType: 'json',
 				data: {
@@ -198,7 +198,7 @@
 	function addFavorite(){
 		productID = $('#alertModal input[name="id-alert"]').val();
 		$.ajax({
-			url: 'http://localhost/BasicShop_Angile/Ajax/addFavorite',
+			url: 'http://localhost/BasicAgile_SalesShop/Ajax/addFavorite',
 			method: 'post',
 			data: {
 				productID:productID
@@ -250,7 +250,7 @@
 		var newpass = $('input[id=newpass]').val();
 		var confirmnewpass = $('input[id=confirmnewpass]').val();
 		$.ajax({
-			url: 'http://localhost/BasicShop_Angile/Ajax/updatePassword',
+			url: 'http://localhost/BasicAgile_SalesShop/Ajax/updatePassword',
 			method: 'post',
 			dataType: 'json',
 			data: {
@@ -274,7 +274,7 @@
 		var phone = $('input[id=updatePhone]').val();
 		var address = $('input[id=updateAddress]').val();
 		$.ajax({
-			url: 'http://localhost/BasicShop_Angile/Ajax/updateAccount',
+			url: 'http://localhost/BasicAgile_SalesShop/Ajax/updateAccount',
 			method: 'post',
 			data: {
 				name: name,
