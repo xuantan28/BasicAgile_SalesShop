@@ -206,21 +206,3 @@
 </div>
 <!-- end reset pass modal -->
 
-<!-- toast -->
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000" style="position: fixed; top: 2.5rem; right: 1rem; width: 17%;">
-    <div class="toast-header">
-        <strong id="titleToast" class="mr-auto"></strong>
-        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div style="display:flex;justify-content:space-between;align-items:center;" class="toast-body">
-        <div id="iconToast">
-
-        </div>
-        <div id="contentToast">
-
-        </div>
-    </div>
-</div>
-<!-- end toast -->
