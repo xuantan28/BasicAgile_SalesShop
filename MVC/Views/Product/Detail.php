@@ -45,7 +45,7 @@
 									<?php else : ?>
 										<span class="new-price"><?php echo number_format($model['single']['Price'], 0, '', ','); ?> đ</span>
 									<?php endif; ?>
-
+									<h6></h6>
 								</div>
 							</div>
 							<div class="warranty">

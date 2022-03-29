@@ -192,6 +192,124 @@
 		}
 	});
 
+		/* update quantity cart function */
+		function updateQuantity(productID,event){
+			var newQuantity = event.target.value;
+			$.ajax({
+				url: 'http://localhost/BasicAgile_SalesShop/Ajax/updateQuantity',
+				method: 'post',
+				data: {
+					productID: productID,
+					newQuantity: newQuantity
+				}
+			});
+			loadCartHover();
+			loadCart();
+		}
+	
+		/* load cart hover function*/
+		loadCartHover();
+		function loadCartHover() {
+			$.ajax({
+				url: 'http://localhost/BasicAgile_SalesShop/Ajax/loadCartHover',
+				method: 'post',
+				success: function(response) {
+					$('.header-top .cart').html(response);
+				}
+			});
+		}
+	
+		/* load cart function*/
+		loadCart();
+		function loadCart() {
+			$.ajax({
+				url: 'http://localhost/BasicAgile_SalesShop/Ajax/loadCart',
+				method: 'post',
+				success: function(response) {
+					$('.cart-wrapper .cart-container').html(response);
+				}
+			});
+		}
+	
+		/* allow clear cart function*/
+		function allowClear(){
+			$('#clearModal').modal();
+		}
+	
+		/* clear cart function*/
+		function clearCart(){
+			$.ajax({
+				url: 'http://localhost/BasicAgile_SalesShop/Ajax/clearCart',
+			});
+			loadCart();
+			loadCartHover();
+		}
+	
+		/* pass data remove cart function*/
+		function passDataRemove(id,name){
+			$('#removeModal input[name="id-remove"]').val(id);
+			$('#removeModal label').html(name);
+			$('#removeModal').modal();
+		}
+	
+		/* remove cart function*/
+		function removeCart(){
+			var productID = $('#removeModal input[name="id-remove"]').val();
+			$.ajax({
+				url: 'http://localhost/BasicAgile_SalesShop/Ajax/removeCart',
+				method: 'post',
+				data: {
+					productID:productID
+				},
+			});
+			loadCart();
+			loadCartHover();
+		}
+	
+		/* add cart function*/
+		function addCart(productID,quantity,type=1){
+			$.ajax({
+				url: 'http://localhost/BasicAgile_SalesShop/Ajax/getSession',
+				method: 'post',
+				success: function(response) {
+					if (response) {
+						var _quantity = quantity;
+						if (type == 2) {
+							_quantity = document.getElementById('quantity').value;
+						}
+						$.ajax({
+							url: 'http://localhost/BasicAgile_SalesShop/Ajax/addCart',
+							method: 'post',
+							data: {
+								productID:productID,
+								quantity:_quantity
+							},
+							success: function(response) {
+								if (type == 1){
+									if (response == 1) {
+										$('#outQuantityModal').modal();
+									}
+								}
+								else {
+									if (response == 1) {
+										$('#outQuantityModal').modal();
+									}
+									else {
+										$('#successModal').modal();
+									}
+								}
+							}
+						});
+						loadCartHover();
+					}
+					else {
+						$('#loginPermissionModal').modal();
+					}
+				}
+			});
+		}
+	
+
 
 
 	/* add favorite function*/
