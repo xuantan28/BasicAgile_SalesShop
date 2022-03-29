@@ -19,7 +19,7 @@
 		<div class="login-wrapper">
 			<nav class="navbar " style="position:absolute;top:10px;left:10px"  >
 				<a class="navbar-brand" href="<?php echo BASE_URL ?>">
-					<img src="https://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png" width="50" height="50" alt="Home"><b>   DOTSHOP</b>
+					<img src="https://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png" width="50" height="50" alt="Home"><b>   BasicShop</b>
 				</a>
 			</nav>
 			<!-- login-form-start -->
