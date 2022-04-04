@@ -1,9 +1,9 @@
 <?php  
 class Home extends ViewModel{
 	public function __construct(){
-		// if (empty($_SESSION['USER_SESSION'])){
-		// 	header('Location:'.BASE_URL.'Login/Index');
-		// }
+		if (empty($_SESSION['USER_SESSION'])){
+			header('Location:'.BASE_URL.'Login/Index');
+		}
 		$account = $this->getModel('AccountDAL');
 		$product = $this->getModel('ProductDAL');
 		$contact = $this->getModel('ContactDAL');
