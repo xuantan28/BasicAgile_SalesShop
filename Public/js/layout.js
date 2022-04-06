@@ -312,25 +312,7 @@
 
 
 
-	/* add favorite function*/
-	function addFavorite(){
-		productID = $('#alertModal input[name="id-alert"]').val();
-		$.ajax({
-			url: 'http://localhost/BasicAgile_SalesShop/Ajax/addFavorite',
-			method: 'post',
-			data: {
-				productID:productID
-			},
-			success: function(response) {
-				if (response){
-					$('#successModal').modal();
-				}
-				else{
-					$('#failedModal').modal();
-				}
-			}
-		});
-	}
+	
 
 	/* pass data alert modal function*/
 	function passDataAlertModal(id,name){
