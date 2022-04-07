@@ -192,6 +192,22 @@
 		}
 	});
 
+	/* show check out form function */
+	function showCheckOut(){
+		$.ajax({
+			url: 'http://localhost/BasicAgile_SalesShop/Ajax/showCheckOut',
+			method: 'post',
+			success: function(response){
+				$('.cart-wrapper .payment').html(response);
+			}
+		});
+	}
+
+	/* hide check out form function */
+	function hideCheckOut(){
+		$('.cart-wrapper .payment').html('');
+	}
+
 		/* update quantity cart function */
 		function updateQuantity(productID,event){
 			var newQuantity = event.target.value;
