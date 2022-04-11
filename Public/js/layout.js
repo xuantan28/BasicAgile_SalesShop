@@ -192,6 +192,22 @@
 		}
 	});
 
+	/* show check out form function */
+	function showCheckOut(){
+		$.ajax({
+			url: 'http://localhost/BasicAgile_SalesShop/Ajax/showCheckOut',
+			method: 'post',
+			success: function(response){
+				$('.cart-wrapper .payment').html(response);
+			}
+		});
+	}
+
+	/* hide check out form function */
+	function hideCheckOut(){
+		$('.cart-wrapper .payment').html('');
+	}
+
 		/* update quantity cart function */
 		function updateQuantity(productID,event){
 			var newQuantity = event.target.value;
@@ -312,25 +328,7 @@
 
 
 
-	/* add favorite function*/
-	function addFavorite(){
-		productID = $('#alertModal input[name="id-alert"]').val();
-		$.ajax({
-			url: 'http://localhost/BasicAgile_SalesShop/Ajax/addFavorite',
-			method: 'post',
-			data: {
-				productID:productID
-			},
-			success: function(response) {
-				if (response){
-					$('#successModal').modal();
-				}
-				else{
-					$('#failedModal').modal();
-				}
-			}
-		});
-	}
+	
 
 	/* pass data alert modal function*/
 	function passDataAlertModal(id,name){
