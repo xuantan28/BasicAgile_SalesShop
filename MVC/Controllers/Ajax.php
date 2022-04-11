@@ -353,6 +353,19 @@ class Ajax extends ViewModel{
 			echo 1;
 		}
 	}
+	/*ajax addfavorite */
+	public function addFavorite(){
+		$favorite = $this->getModel('FavoriteDAL');
+		if (!json_decode($favorite->checkExisted($_SESSION['USER_ID_SESSION'],$_POST['productID']),true)){
+			if (json_decode($favorite->insertItem($_SESSION['USER_ID_SESSION'],$_POST['productID']),true)){
+				echo true;
+			}
+		}
+		else{
+			echo false;
+		}
+	}
+
 
 }
 ?>

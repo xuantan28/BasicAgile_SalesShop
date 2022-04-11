@@ -337,6 +337,26 @@
 		$('#alertModal').modal();
 	}
 
+	/* add favorite function*/
+	function addFavorite(){
+		productID = $('#alertModal input[name="id-alert"]').val();
+		$.ajax({
+			url: 'http://localhost/BasicAgile_SalesShop/Ajax/addFavorite',
+			method: 'post',
+			data: {
+				productID:productID
+			},
+			success: function(response) {
+				if (response){
+					$('#successModal').modal();
+				}
+				else{
+					$('#failedModal').modal();
+				}
+			}
+		});
+	}
+
 	/* change active product menu */
 	$('.product-navigation li').click(function(){
 		$(this).addClass('active').siblings().removeClass('active');
